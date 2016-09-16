@@ -6,14 +6,16 @@ describe AmazonService do
 
       keyword = "cooking"
       all_data = AmazonService.new.get_info(keyword)
-    
+      sales_rank = all_data.first["SalesRank"]
+      item = all_data.first["ItemAttributes"]
+      customer_reviews_url = all_data.first["CustomerReviews"]["IFrameURL"]
 
 
-      # expect(item["DetailPageURL"]).to eq(url)
-      # expect(item["ItemAttributes"]["UPC"]).to eq(upc)
-      # expect(item["ItemAttributes"]["Feature"][1]).to eq("Irresistible snacking")
-      # expect(item["OfferSummary"]["LowestNewPrice"]["FormattedPrice"]).to eq("$3.40")
-      # expect(item["EditorialReviews"]["EditorialReview"]["Content"]).to eq("This is one of those snacks we predict will disappear quickly.  So go ahead and enjoy the crunch of these oven roasted almonds.  The flavor packed combination is also a good source of protein to help you get up and go.")
+      expect(item["Title"]).to eq("Thug Kitchen: The Official Cookbook: Eat Like You Give a F*ck")
+      expect(item["Author"]).to eq("Thug Kitchen")
+      expect(item["ListPrice"]["FormattedPrice"]).to eq("$25.99")
+      expect(sales_rank).to eq(all_data.first["SalesRank"])
+      expect(customer_reviews_url).to eq(all_data.first["CustomerReviews"]["IFrameURL"])
     end
 
     # it "returns item price for the given item upc" do

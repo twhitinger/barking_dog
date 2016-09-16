@@ -17,10 +17,17 @@ Shoulda::Matchers.configure do |config|
   end
 end
 
-VCR.configure do |config|
-  config.cassette_library_dir = "spec/vcr_cassettes"
-  config.hook_into :webmock # or :fakeweb
-  config.configure_rspec_metadata!
+# VCR.configure do |config|
+#   config.cassette_library_dir = "spec/vcr_cassettes"
+#   config.hook_into :webmock # or :fakeweb
+#   config.configure_rspec_metadata!
+# end
+
+VCR.configure do |c|
+  c.cassette_library_dir = 'spec/cassettes'
+  c.hook_into :webmock
+  c.configure_rspec_metadata!
+  c.allow_http_connections_when_no_cassette = true
 end
 # Add additional requires below this line. Rails is not loaded until this point!
 

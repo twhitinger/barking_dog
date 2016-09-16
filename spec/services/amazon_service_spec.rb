@@ -1,12 +1,12 @@
 require "rails_helper"
 
-describe AmazonService, vcr: true do
+describe AmazonService do
   context "#item attributes" do
     it "returns item with attriubutes specified for the given keyword" do
 
       keyword = "cooking"
       all_data = AmazonService.new.get_info(keyword)
-      binding.pry
+    
 
 
       # expect(item["DetailPageURL"]).to eq(url)

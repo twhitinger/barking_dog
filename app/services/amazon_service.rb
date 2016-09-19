@@ -14,7 +14,6 @@ class AmazonService
         req.url signed_url
       end
       result = parse(response)
-      binding.pry
   end
 
   private
@@ -24,7 +23,7 @@ class AmazonService
   end
 
   def parse(response)
-    Crack::XML.parse(response.body) unless response.nil?
+    Crack::XML.parse(response.body)["ItemSearchResponse"]["Items"]["Item"] unless response.nil?
   end
 
 end

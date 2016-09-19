@@ -6,6 +6,7 @@
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+
   </head>
   <body>
       <nav class="navbar navbar-default" role="navigation">
@@ -24,6 +25,7 @@
               <div class="form-group search-field">
                 <%= text_field_tag :query, "Search by keyword...", class: "form-control" %>
                 <%= submit_tag "Find Items", class: "btn btn-primary" %>
+
               </div>
             <% end %>
           </ul>

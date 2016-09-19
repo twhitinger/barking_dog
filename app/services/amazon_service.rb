@@ -7,7 +7,7 @@ class AmazonService
 
   def get_info(keyword)
       app_name = "bivatol-20"
-      url = "http://webservices.amazon.com/onca/xml?AWSAccessKeyId=#{ENV['AMAZON_API_KEY']}&AssociateTag=#{app_name}&Keywords=#{keyword}&Operation=ItemSearch&ResponseGroup=ItemAttributes%2COffers%2CReviews%2CSalesRank&SearchIndex=All&Service=AWSECommerceService&Timestamp="
+      url = "http://webservices.amazon.com/onca/xml?AWSAccessKeyId=#{ENV['AMAZON_API_KEY']}&AssociateTag=#{app_name}&Keywords=#{keyword}&MinimumPrice=1000&Operation=ItemSearch&ResponseGroup=Images%2CItemAttributes%2COfferFull%2COffers%2CSalesRank&SearchIndex=Books&Service=AWSECommerceService&Timestamp="
       url << Time.now.utc.strftime("%Y-%m-%dT%H:%M:%SZ")
       signed_url = create_signature(url)
       response = connection.get do |req|
@@ -15,9 +15,6 @@ class AmazonService
       end
       result = parse(response)
   end
-
-
-
 
   private
 

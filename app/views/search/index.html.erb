@@ -1,0 +1,19 @@
+<table class = "search_results">
+  <tr>
+    <th>Title</th>
+    <th>Manufacturer</th>
+    <th>Author</th>
+    <th>Price</th>
+    <th>SalesRank</th>
+  </tr>
+  <% @items.each do |item| %>
+
+  <tr class = "stations">
+    <td><%= item["ItemAttributes"]["Title"] %></td>
+    <td><%= item["ItemAttributes"]["Manufacturer"] %></td>
+    <td><%= item["ItemAttributes"]["Author"] %></td>
+    <td><%= item["ItemAttributes"]["ListPrice"] %></td>
+    <td><%= item["SalesRank"] %></td>
+  </tr>
+  <% end %>
+</table>

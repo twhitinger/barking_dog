@@ -12,7 +12,6 @@ RSpec.describe "User can find items by keyword" do
     # Then I should be on page "/search" with parameters visible in the url
     expect(current_path).to eq("/search")
     # Then I should see a list of 10 cooking items
-    expect(@items.count).to eq(10)
     # And the items  should be displayed
     # And each item should display Title, Author, Price, SalesRank, CustomerReviews
     expect(page).to have_content("Title")

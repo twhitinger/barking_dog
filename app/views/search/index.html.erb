@@ -7,13 +7,12 @@
     <th>SalesRank</th>
   </tr>
   <% @items.each do |item| %>
-
   <tr class = "stations">
-    <td><%= item["ItemAttributes"]["Title"] %></td>
-    <td><%= item["ItemAttributes"]["Manufacturer"] %></td>
-    <td><%= item["ItemAttributes"]["Author"] %></td>
-    <td><%= item["ItemAttributes"]["ListPrice"] %></td>
-    <td><%= item["SalesRank"] %></td>
+    <td><%= item.ItemAttributes.Title %></td>
+    <td><%= item.ItemAttributes.Manufacturer %></td>
+    <td><%= item.ItemAttributes.Author %></td>
+    <td><%= item.ItemAttributes.ListPrice.FormattedPrice if item.ItemAttributes.ListPrice %></td>
+    <td><%= item.SalesRank %></td>
   </tr>
   <% end %>
 </table>

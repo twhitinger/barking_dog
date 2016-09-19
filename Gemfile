@@ -29,6 +29,8 @@ gem 'crack'
 gem 'pry'
 gem 'bootstrap-sass', '~> 3.3.6'
 gem 'recursive-open-struct'
+gem 'nokogiri'
+gem 'httparty'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development

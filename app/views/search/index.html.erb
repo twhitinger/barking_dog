@@ -7,6 +7,7 @@
     <th>SalesRank</th>
   </tr>
   <% @items.each do |item| %>
+  <%= binding.pry %>
   <tr class = "items">
     <td><%= item.ItemAttributes.Title %></td>
     <td><%= item.ItemAttributes.Manufacturer %></td>

@@ -26,7 +26,7 @@
           <tbody>
             <% @items.each do |item| %>
             <tr class = "items">
-              <div class="col-md-2">
+              <div class="col-md-2" class="results" >
                 <td><%= link_to item.ItemAttributes.Title, "/search/#{item.ItemAttributes.EAN}"  %></td>
               </div>
               <div class="col-md-2">
@@ -36,7 +36,7 @@
                 <td><%= item.ItemAttributes.Manufacturer %></td>
               </div>
               <div class="col-md-3">
-                <td><%= item.OfferSummary.LowestNewPrice.FormattedPrice %></td>
+                <td><%= item.OfferSummary.LowestNewPrice.FormattedPrice if item.OfferSummary%></td>
               </div>
               <div class="col-md-3">
                 <td><%= item.SalesRank %></td>

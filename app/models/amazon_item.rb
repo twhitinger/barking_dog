@@ -11,4 +11,11 @@ class AmazonItem
     end
   end
 
+  def self.find_item(item_id)
+    RecursiveOpenStruct.new(service.find_item(item_id))
+  end
+
+  def self.find_more_search_results(keyword)
+    WebScraper.new.get_more_results((service.find_more_search_results(keyword)))
+  end
 end

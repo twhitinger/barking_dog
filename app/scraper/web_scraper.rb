@@ -1,6 +1,6 @@
 require 'nokogiri'
 require 'csv'
-require 'Faraday'
+require 'faraday'
 require 'pry'
 require 'open-uri'
 require 'open_uri_redirections'

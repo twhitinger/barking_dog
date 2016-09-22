@@ -13,6 +13,6 @@ class SearchController < ApplicationController
   def show
     @item = AmazonItem.find_item(params[:id])
     @html = display(@item.DetailPageURL)
-   @comments = @item.CustomerReviews.IFrameURL
+    @comments = @item.CustomerReviews.IFrameURL
   end
 end

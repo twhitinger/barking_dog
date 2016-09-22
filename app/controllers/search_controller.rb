@@ -1,10 +1,18 @@
+
+
 class SearchController < ApplicationController
   def index
-    if params['query']
+    @items = AmazonItem.get_info(params['query'])
+  end
 
-      @items = AmazonItem.get_info(params['query'])
-    else
-      @items = AmazonItem.by_price(params['keyword'])
-    end
+
+  def more_search_results
+    @more_search_results = AmazonItem.find_more_search_results(params['query'])
+  end
+
+  def show
+    @item = AmazonItem.find_item(params[:id])
+    @html = display(@item.DetailPageURL)
+   @comments = @item.CustomerReviews.IFrameURL
   end
 end

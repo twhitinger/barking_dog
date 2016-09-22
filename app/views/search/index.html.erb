@@ -1,18 +1,54 @@
-<table id="data_table" class = "search_results" >
-  <tr>
-    <th>Title</th>
-    <th>Manufacturer</th>
-    <th>Author</th>
-    <th> <%=link_to "Price", :keyword => params['query'] %></th>
-    <th>SalesRank</th>
-  </tr>
-  <% @items.each do |item| %>
-  <tr class = "items">
-    <td><%= item.ItemAttributes.Title %></td>
-    <td><%= item.ItemAttributes.Manufacturer %></td>
-    <td><%= item.ItemAttributes.Author %></td>
-    <td><%= item.OfferSummary.LowestNewPrice.FormattedPrice %></td>
-    <td><%= item.SalesRank %></td>
-  </tr>
-  <% end %>
-</table>
+
+<div class="row" >
+  <div class="col-md-12">
+    <div class="container">
+      <div class="well">
+        <table id="data_table" class = "search_results" >
+          <thead>
+            <tr>
+              <div class="col-md-2">
+                <th>Title</th>
+              </div>
+              <div class="col-md-2">
+                <th>Product Group</th>
+              </div>
+              <div class="col-md-2">
+                <th>Manufacturer</th>
+              </div>
+              <div class="col-md-3">
+                <th>Price</th>
+              </div>
+              <div class="col-md-3">
+                <th>SalesRank</th>
+              </div>
+            </tr>
+          </thead>
+          <tbody>
+            <% @items.each do |item| %>
+            <tr class = "items">
+              <div class="col-md-2">
+                <td><%= link_to item.ItemAttributes.Title, "/search/#{item.ItemAttributes.EAN}"  %></td>
+              </div>
+              <div class="col-md-2">
+                <td><%= item.ItemAttributes.ProductGroup %></td>
+              </div>
+              <div class="col-md-2">
+                <td><%= item.ItemAttributes.Manufacturer %></td>
+              </div>
+              <div class="col-md-3">
+                <td><%= item.OfferSummary.LowestNewPrice.FormattedPrice %></td>
+              </div>
+              <div class="col-md-3">
+                <td><%= item.SalesRank %></td>
+              </div>
+            </div>
+          </div>
+        </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+</div>
+</div>
+</div>
+<%= link_to "raw_html_scraped" ,"/search/more_search_results/#{params['query']}"  %>

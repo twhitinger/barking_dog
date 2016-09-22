@@ -1,1 +1,20 @@
 .search-field { margin-top: 7px;}
+
+
+body {
+background-image: image-url('barking_dog.jpeg');
+background-repeat: no-repeat;
+background-size: 100%;
+}
+
+.well {
+   background-color: rgba(245, 245, 245, 0.4);
+}
+
+#messages {
+  max-height: 450px;
+  overflow-y: auto;
+  .avatar {
+    margin: 0.5rem;
+  }
+}

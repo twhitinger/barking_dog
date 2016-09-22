@@ -1,4 +1,3 @@
-require 'HTTParty'
 require 'Nokogiri'
 require 'csv'
 require 'Faraday'

@@ -30,7 +30,6 @@ gem 'pry'
 gem 'bootstrap-sass', '~> 3.3.6'
 gem 'recursive-open-struct'
 gem 'nokogiri'
-gem 'httparty'
 gem 'open_uri_redirections'
 gem 'mechanize'
 gem "embedly"

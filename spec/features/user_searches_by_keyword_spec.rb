@@ -29,6 +29,8 @@ RSpec.describe "User can find items by keyword" do
     expect(page).to have_content("Manufacturer")
     expect(page).to have_content("Price")
     expect(page).to have_content("SalesRank")
+
+    click_on "raw_html_scraped"
     # expect(page).to have_content("CustomerReviews")
   end
 end

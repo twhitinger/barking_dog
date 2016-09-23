@@ -25,11 +25,10 @@ RSpec.describe "User can click on a item and return info" do
       first(:link).click
     end
 
-  
+
     # Then I should see a list of 10 cooking items
     # And the items  should be displayed
     # And each item should display Title, Author, Price, SalesRank, CustomerReviews
-    expect(page).to have_content("First Response")
     expect(page).to have_content("All Comments")
 
     # expect(page).to have_content("CustomerReviews")
